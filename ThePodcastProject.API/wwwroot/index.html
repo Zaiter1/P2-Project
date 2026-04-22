@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Podcast Studio — Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #222222;
+    --accent: #e8ff47;
+    --accent2: #ff6b35;
+    --text: #f0f0f0;
+    --muted: #666;
+    --danger: #ff4444;
+    --success: #44ff88;
+    --info: #44aaff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: 220px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+
+  .logo {
+    padding: 28px 24px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .nav {
+    padding: 16px 0;
+    flex: 1;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+
+  .nav-item:hover { color: var(--text); background: var(--surface2); }
+
+  .nav-item.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+    background: rgba(232,255,71,0.05);
+  }
+
+  .nav-icon { font-size: 16px; width: 20px; text-align: center; }
+
+  .nav-badge {
+    margin-left: auto;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--muted);
+  }
+
+  .nav-item.active .nav-badge {
+    background: rgba(232,255,71,0.1);
+    border-color: rgba(232,255,71,0.3);
+    color: var(--accent);
+  }
+
+  .sidebar-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .status-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--success);
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* MAIN */
+  .main {
+    margin-left: 220px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topbar {
+    padding: 24px 36px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 3px;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .page-title span { color: var(--accent); }
+
+  .page-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    letter-spacing: 1px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .btn-add {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.15s;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  .btn-add:hover { background: #fff; transform: translateY(-1px); }
+
+  /* CONTENT */
+  .content { padding: 28px 36px 40px; flex: 1; }
+
+  /* SECTION */
+  .section { display: none; animation: fadeIn 0.2s ease; }
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* FORM CARD */
+  .form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .form-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group select option { background: var(--surface2); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+
+  .form-actions { display: flex; gap: 10px; align-items: center; }
+
+  .btn-save {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-save:hover { background: #fff; }
+
+  .btn-cancel {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .btn-cancel:hover { color: var(--text); border-color: var(--muted); }
+
+  /* TABLE */
+  .table-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .table-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .table-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .count-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    padding: 3px 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead th {
+    background: var(--surface2);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'DM Mono', monospace;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.1s;
+  }
+
+  tbody tr:hover { background: var(--surface2); }
+  tbody tr:last-child { border-bottom: none; }
+
+  tbody td {
+    padding: 14px 16px;
+    color: var(--text);
+    vertical-align: middle;
+  }
+
+  .td-id {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .td-actions { display: flex; gap: 8px; }
+
+  .btn-edit {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--info);
+    padding: 6px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+  }
+
+  .btn-edit:hover { border-color: var(--info); background: rgba(68,170,255,0.1); }
+
+  .btn-delete {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--danger);
+    padding: 6px 12px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+  }
+
+  .btn-delete:hover { border-color: var(--danger); background: rgba(255,68,68,0.1); }
+
+  /* STATUS BADGES */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .badge-active { background: rgba(68,255,136,0.1); color: var(--success); border: 1px solid rgba(68,255,136,0.3); }
+  .badge-cancelled { background: rgba(255,68,68,0.1); color: var(--danger); border: 1px solid rgba(255,68,68,0.3); }
+  .badge-finished { background: rgba(68,170,255,0.1); color: var(--info); border: 1px solid rgba(68,170,255,0.3); }
+
+  /* EMPTY STATE */
+  .empty-state {
+    padding: 60px;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  .empty-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.4; }
+  .empty-text { font-size: 13px; font-family: 'DM Mono', monospace; letter-spacing: 1px; }
+
+  /* TOAST */
+  #toast-container {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .toast {
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.2s ease, fadeOut 0.3s ease 2.7s forwards;
+    pointer-events: auto;
+    border-left: 3px solid;
+    min-width: 260px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .toast-success { background: #0d1f14; border-color: var(--success); color: var(--success); }
+  .toast-error { background: #1f0d0d; border-color: var(--danger); color: var(--danger); }
+  .toast-info { background: #0d1520; border-color: var(--info); color: var(--info); }
+
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; transform: translateX(20px); }
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: modalIn 0.2s ease;
+  }
+
+  .modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--danger);
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .modal-icon { font-size: 32px; margin-bottom: 16px; }
+  .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 2px; margin-bottom: 8px; }
+  .modal-text { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .modal-actions { display: flex; gap: 10px; }
+
+  .btn-confirm-delete {
+    background: var(--danger);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    flex: 1;
+  }
+
+  .btn-confirm-delete:hover { opacity: 0.85; }
+
+  /* LOADING */
+  .loading-row td {
+    padding: 40px;
+    text-align: center;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px; height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* RESERVATION DETAIL */
+  .res-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .res-info {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .equip-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+
+  .equip-chip {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    font-size: 10px;
+    padding: 2px 8px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  /* CHECKBOX LIST */
+  .checkbox-list {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    max-height: 120px;
+    overflow-y: auto;
+    padding: 8px;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.1s;
+  }
+
+  .checkbox-item:hover { background: rgba(255,255,255,0.03); }
+
+  .checkbox-item input[type="checkbox"] {
+    accent-color: var(--accent);
+    width: 14px; height: 14px;
+    cursor: pointer;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-title">The Podcast</div>
+    <div class="logo-sub">Studio Manager</div>
+  </div>
+  <nav class="nav">
+    <div class="nav-item active" onclick="switchSection('clients')">
+      <span class="nav-icon">👤</span> Clientes
+      <span class="nav-badge" id="badge-clients">0</span>
+    </div>
+    <div class="nav-item" onclick="switchSection('cabins')">
+      <span class="nav-icon">🎙️</span> Cabinas
+      <span class="nav-badge" id="badge-cabins">0</span>
+    </div>
+    <div class="nav-item" onclick="switchSection('equipment')">
+      <span class="nav-icon">🎧</span> Equipos
+      <span class="nav-badge" id="badge-equipment">0</span>
+    </div>
+    <div class="nav-item" onclick="switchSection('reservations')">
+      <span class="nav-icon">📅</span> Reservas
+      <span class="nav-badge" id="badge-reservations">0</span>
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <span class="status-dot"></span>API CONECTADA
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ===== CLIENTES ===== -->
+  <section id="section-clients" class="section active">
+    <div class="topbar">
+      <div>
+        <div class="page-title">CLIEN<span>TES</span></div>
+        <div class="page-sub">GESTIÓN DE CLIENTES REGISTRADOS</div>
+      </div>
+      <button class="btn-add" onclick="openForm('clients')">+ NUEVO CLIENTE</button>
+    </div>
+    <div class="content">
+      <div class="form-card" id="form-clients" style="display:none">
+        <div class="form-title" id="form-clients-title">// NUEVO CLIENTE</div>
+        <div class="form-grid">
+            <input type="hidden" id="client-id">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" id="client-name" placeholder="Ej. Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="client-email" placeholder="correo@ejemplo.com">
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <!--<input type="text" id="client-phone" placeholder="809-000-0000">-->
+                <!--<input type="text" id="client-phone" placeholder="809-000-0000" maxlength="12" oninput="this.value=this.value.replace(/[^0-9-]/g,'')">-->
+                <input type="text" id="client-phone" placeholder="809-000-0000" maxlength="12">
+            </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-save" onclick="saveClient()">GUARDAR</button>
+          <button class="btn-cancel" onclick="closeForm('clients')">CANCELAR</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-label">// REGISTRO</span>
+          <span class="count-badge" id="count-clients">0 registros</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Reservas</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-clients">
+            <tr class="loading-row"><td colspan="6"><span class="spinner"></span>CARGANDO...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CABINAS ===== -->
+  <section id="section-cabins" class="section">
+    <div class="topbar">
+      <div>
+        <div class="page-title">CABI<span>NAS</span></div>
+        <div class="page-sub">GESTIÓN DE CABINAS DE GRABACIÓN</div>
+      </div>
+      <button class="btn-add" onclick="openForm('cabins')">+ NUEVA CABINA</button>
+    </div>
+    <div class="content">
+      <div class="form-card" id="form-cabins" style="display:none">
+        <div class="form-title" id="form-cabins-title">// NUEVA CABINA</div>
+        <div class="form-grid">
+          <input type="hidden" id="cabin-id">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="cabin-name" placeholder="Ej. Cabina A">
+          </div>
+          <div class="form-group">
+            <label>Capacidad</label>
+            <input type="number" id="cabin-capacity" placeholder="Ej. 4" min="1">
+          </div>
+          <div class="form-group" style="grid-column: span 2;">
+            <label>Descripción</label>
+            <input type="text" id="cabin-description" placeholder="Descripción de la cabina...">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-save" onclick="saveCabin()">GUARDAR</button>
+          <button class="btn-cancel" onclick="closeForm('cabins')">CANCELAR</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-label">// REGISTRO</span>
+          <span class="count-badge" id="count-cabins">0 registros</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Capacidad</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-cabins">
+            <tr class="loading-row"><td colspan="5"><span class="spinner"></span>CARGANDO...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EQUIPOS ===== -->
+  <section id="section-equipment" class="section">
+    <div class="topbar">
+      <div>
+        <div class="page-title">EQUI<span>POS</span></div>
+        <div class="page-sub">GESTIÓN DE EQUIPAMIENTO TÉCNICO</div>
+      </div>
+      <button class="btn-add" onclick="openForm('equipment')">+ NUEVO EQUIPO</button>
+    </div>
+    <div class="content">
+      <div class="form-card" id="form-equipment" style="display:none">
+        <div class="form-title" id="form-equipment-title">// NUEVO EQUIPO</div>
+        <div class="form-grid">
+          <input type="hidden" id="equip-id">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="equip-name" placeholder="Ej. Micrófono Shure">
+          </div>
+          <div class="form-group">
+            <label>Tipo</label>
+            <input type="text" id="equip-type" placeholder="Ej. Micrófono, Auricular...">
+          </div>
+          <div class="form-group" style="grid-column: span 2;">
+            <label>Descripción</label>
+            <input type="text" id="equip-description" placeholder="Descripción del equipo...">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-save" onclick="saveEquipment()">GUARDAR</button>
+          <button class="btn-cancel" onclick="closeForm('equipment')">CANCELAR</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-label">// REGISTRO</span>
+          <span class="count-badge" id="count-equipment">0 registros</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-equipment">
+            <tr class="loading-row"><td colspan="5"><span class="spinner"></span>CARGANDO...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVAS ===== -->
+  <section id="section-reservations" class="section">
+    <div class="topbar">
+      <div>
+        <div class="page-title">RESER<span>VAS</span></div>
+        <div class="page-sub">CONTROL DE HORARIOS Y CABINAS</div>
+      </div>
+      <button class="btn-add" onclick="openForm('reservations')">+ NUEVA RESERVA</button>
+    </div>
+    <div class="content">
+      <div class="form-card" id="form-reservations" style="display:none">
+        <div class="form-title" id="form-reservations-title">// NUEVA RESERVA</div>
+        <div class="form-grid">
+          <input type="hidden" id="res-id">
+          <div class="form-group">
+            <label>Cliente</label>
+            <select id="res-client"></select>
+          </div>
+          <div class="form-group">
+            <label>Cabina</label>
+            <select id="res-cabin"></select>
+          </div>
+          <div class="form-group">
+            <label>Fecha inicio</label>
+            <input type="datetime-local" id="res-start">
+          </div>
+          <div class="form-group">
+            <label>Fecha fin</label>
+            <input type="datetime-local" id="res-end">
+          </div>
+          <div class="form-group">
+            <label>Estado</label>
+            <select id="res-state">
+              <option value="activada">Activada</option>
+              <option value="cancelada">Cancelada</option>
+              <option value="finalizada">Finalizada</option>
+            </select>
+          </div>
+          <div class="form-group" style="grid-column: span 2;">
+            <label>Equipos (opcional)</label>
+            <div class="checkbox-list" id="equip-checkbox-list">
+              <div style="color:var(--muted);font-size:12px;padding:8px;font-family:'DM Mono',monospace;">Cargando equipos...</div>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn-save" onclick="saveReservation()">GUARDAR</button>
+          <button class="btn-cancel" onclick="closeForm('reservations')">CANCELAR</button>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <span class="table-label">// REGISTRO</span>
+          <span class="count-badge" id="count-reservations">0 registros</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Cabina</th>
+              <th>Inicio</th>
+              <th>Fin</th>
+              <th>Estado</th>
+              <th>Equipos</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-reservations">
+            <tr class="loading-row"><td colspan="8"><span class="spinner"></span>CARGANDO...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<!-- MODAL CONFIRMAR ELIMINACIÓN -->
+<div class="modal-overlay" id="modal-delete">
+  <div class="modal">
+    <div class="modal-icon">⚠️</div>
+    <div class="modal-title">ELIMINAR</div>
+    <div class="modal-text" id="modal-delete-text">¿Estás seguro de que deseas eliminar este registro? Esta acción no se puede deshacer.</div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeDeleteModal()">CANCELAR</button>
+      <button class="btn-confirm-delete" onclick="confirmDelete()">SÍ, ELIMINAR</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    const API = 'https://localhost:7267/api';
+
+  // ============ STATE ============
+  let clients = [], cabins = [], equipment = [], reservations = [];
+  let pendingDelete = null; // { type, id }
+
+  // ============ INIT ============
+  window.onload = async () => {
+    await Promise.all([loadClients(), loadCabins(), loadEquipment(), loadReservations()]);
+  };
+    //
+    document.getElementById('client-phone').addEventListener('input', function (e) {
+        let val = e.target.value.replace(/\D/g, '').substring(0, 10);
+        if (val.length >= 7) val = val.slice(0, 3) + '-' + val.slice(3, 6) + '-' + val.slice(6);
+        else if (val.length >= 4) val = val.slice(0, 3) + '-' + val.slice(3);
+        e.target.value = val;
+    });
+  // ============ NAVIGATION ============
+  function switchSection(name) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('section-' + name).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // ============ TOAST ============
+  function toast(msg, type = 'success') {
+    const icons = { success: '✓', error: '✗', info: 'ℹ' };
+    const el = document.createElement('div');
+    el.className = `toast toast-${type}`;
+    el.innerHTML = `<span>${icons[type]}</span> ${msg}`;
+    document.getElementById('toast-container').appendChild(el);
+    setTimeout(() => el.remove(), 3100);
+  }
+
+  // ============ DELETE MODAL ============
+  function askDelete(type, id, name) {
+    pendingDelete = { type, id };
+    document.getElementById('modal-delete-text').textContent =
+      `¿Seguro que deseas eliminar "${name}"? Esta acción no se puede deshacer.`;
+    document.getElementById('modal-delete').classList.add('open');
+  }
+
+  function closeDeleteModal() {
+    pendingDelete = null;
+    document.getElementById('modal-delete').classList.remove('open');
+  }
+
+  async function confirmDelete() {
+    if (!pendingDelete) return;
+    const { type, id } = pendingDelete;
+    closeDeleteModal();
+
+    const endpoints = {
+      clients: 'Client', cabins: 'Cabin',
+      equipment: 'Equipment', reservations: 'Reservation'
+    };
+
+    try {
+      const res = await fetch(`${API}/${endpoints[type]}/${id}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error();
+      toast('Registro eliminado correctamente.', 'success');
+      refresh(type);
+    } catch {
+      toast('Error al eliminar. Intenta de nuevo.', 'error');
+    }
+  }
+
+  // ============ FORM OPEN/CLOSE ============
+  function openForm(type) {
+    clearForm(type);
+    const el = document.getElementById('form-' + type);
+    el.style.display = 'block';
+    if (type === 'reservations') populateReservationSelects();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function closeForm(type) {
+    clearForm(type);
+    document.getElementById('form-' + type).style.display = 'none';
+  }
+
+  function clearForm(type) {
+    if (type === 'clients') {
+      document.getElementById('client-id').value = '';
+      document.getElementById('client-name').value = '';
+      document.getElementById('client-email').value = '';
+      document.getElementById('client-phone').value = '';
+      document.getElementById('form-clients-title').textContent = '// NUEVO CLIENTE';
+    } else if (type === 'cabins') {
+      document.getElementById('cabin-id').value = '';
+      document.getElementById('cabin-name').value = '';
+      document.getElementById('cabin-capacity').value = '';
+      document.getElementById('cabin-description').value = '';
+      document.getElementById('form-cabins-title').textContent = '// NUEVA CABINA';
+    } else if (type === 'equipment') {
+      document.getElementById('equip-id').value = '';
+      document.getElementById('equip-name').value = '';
+      document.getElementById('equip-type').value = '';
+      document.getElementById('equip-description').value = '';
+      document.getElementById('form-equipment-title').textContent = '// NUEVO EQUIPO';
+    } else if (type === 'reservations') {
+      document.getElementById('res-id').value = '';
+      document.getElementById('res-start').value = '';
+      document.getElementById('res-end').value = '';
+      document.getElementById('res-state').value = 'activada';
+      document.getElementById('form-reservations-title').textContent = '// NUEVA RESERVA';
+    }
+  }
+
+  // ============ REFRESH ============
+  async function refresh(type) {
+    if (type === 'clients') await loadClients();
+    else if (type === 'cabins') await loadCabins();
+    else if (type === 'equipment') await loadEquipment();
+    else if (type === 'reservations') await loadReservations();
+  }
+
+  // ============ DATE FORMAT ============
+  function fmt(dt) {
+    if (!dt) return '—';
+    const d = new Date(dt);
+    return d.toLocaleDateString('es-DO', { day:'2-digit', month:'short', year:'numeric' })
+      + ' ' + d.toLocaleTimeString('es-DO', { hour:'2-digit', minute:'2-digit' });
+  }
+
+  function toLocalInput(dt) {
+    if (!dt) return '';
+    const d = new Date(dt);
+    const pad = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+
+  // ============ CLIENTS ============
+  async function loadClients() {
+    try {
+      const res = await fetch(`${API}/Client`);
+      clients = await res.json();
+      renderClients();
+    } catch {
+      document.getElementById('tbody-clients').innerHTML =
+        `<tr><td colspan="6" style="padding:20px;color:var(--danger);font-family:'DM Mono',monospace;font-size:12px;text-align:center;">ERROR DE CONEXIÓN — Verifica que la API esté corriendo</td></tr>`;
+    }
+  }
+
+  function renderClients() {
+    const tbody = document.getElementById('tbody-clients');
+    document.getElementById('badge-clients').textContent = clients.length;
+    document.getElementById('count-clients').textContent = `${clients.length} registro${clients.length !== 1 ? 's' : ''}`;
+
+    if (!clients.length) {
+      tbody.innerHTML = `<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">👤</div><div class="empty-text">SIN CLIENTES REGISTRADOS</div></div></td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = clients.map(c => `
+      <tr>
+        <td class="td-id">#${c.id}</td>
+        <td><strong>${c.name}</strong></td>
+        <td>${c.email}</td>
+        <td>${c.phoneNumber}</td>
+        <td><span class="badge badge-active">${c.reservations?.length || 0} reserva${(c.reservations?.length || 0) !== 1 ? 's' : ''}</span></td>
+        <td class="td-actions">
+          <button class="btn-edit" onclick="editClient(${c.id})">EDITAR</button>
+          <button class="btn-delete" onclick="askDelete('clients', ${c.id}, '${c.name.replace(/'/g, "\\'")}')">ELIMINAR</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function editClient(id) {
+    const c = clients.find(x => x.id === id);
+    if (!c) return;
+    openForm('clients');
+    document.getElementById('client-id').value = c.id;
+    document.getElementById('client-name').value = c.name;
+    document.getElementById('client-email').value = c.email;
+    document.getElementById('client-phone').value = c.phoneNumber;
+    document.getElementById('form-clients-title').textContent = `// EDITANDO CLIENTE #${c.id}`;
+  }
+
+  async function saveClient() {
+    const id = parseInt(document.getElementById('client-id').value) || 0;
+    const body = {
+      id,
+      name: document.getElementById('client-name').value.trim(),
+      email: document.getElementById('client-email').value.trim(),
+      phoneNumber: document.getElementById('client-phone').value.trim()
+    };
+
+    if (!body.name || !body.email || !body.phoneNumber) {
+      toast('Completa todos los campos.', 'error'); return;
+    }
+
+      const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
+      if (!phoneRegex.test(body.phoneNumber)) {
+          toast('El teléfono debe tener el formato 000-000-0000.', 'error'); return;
+      }
+
+    const isEdit = id > 0;
+    try {
+      const res = await fetch(`${API}/Client`, {
+        method: isEdit ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error();
+      toast(isEdit ? `Cliente #${id} actualizado.` : 'Cliente añadido correctamente.', 'success');
+      closeForm('clients');
+      await loadClients();
+    } catch {
+      toast('Error al guardar. Intenta de nuevo.', 'error');
+    }
+  }
+
+  // ============ CABINS ============
+  async function loadCabins() {
+    try {
+      const res = await fetch(`${API}/Cabin`);
+      cabins = await res.json();
+      renderCabins();
+    } catch { cabins = []; }
+  }
+
+  function renderCabins() {
+    const tbody = document.getElementById('tbody-cabins');
+    document.getElementById('badge-cabins').textContent = cabins.length;
+    document.getElementById('count-cabins').textContent = `${cabins.length} registro${cabins.length !== 1 ? 's' : ''}`;
+
+    if (!cabins.length) {
+      tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">🎙️</div><div class="empty-text">SIN CABINAS REGISTRADAS</div></div></td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = cabins.map(c => `
+      <tr>
+        <td class="td-id">#${c.id}</td>
+        <td><strong>${c.name}</strong></td>
+        <td>${c.capacity} persona${c.capacity !== 1 ? 's' : ''}</td>
+        <td style="color:var(--muted)">${c.description}</td>
+        <td class="td-actions">
+          <button class="btn-edit" onclick="editCabin(${c.id})">EDITAR</button>
+          <button class="btn-delete" onclick="askDelete('cabins', ${c.id}, '${c.name.replace(/'/g, "\\'")}')">ELIMINAR</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function editCabin(id) {
+    const c = cabins.find(x => x.id === id);
+    if (!c) return;
+    openForm('cabins');
+    document.getElementById('cabin-id').value = c.id;
+    document.getElementById('cabin-name').value = c.name;
+    document.getElementById('cabin-capacity').value = c.capacity;
+    document.getElementById('cabin-description').value = c.description;
+    document.getElementById('form-cabins-title').textContent = `// EDITANDO CABINA #${c.id}`;
+  }
+
+  async function saveCabin() {
+    const id = parseInt(document.getElementById('cabin-id').value) || 0;
+    const body = {
+      id,
+      name: document.getElementById('cabin-name').value.trim(),
+      capacity: parseInt(document.getElementById('cabin-capacity').value) || 0,
+      description: document.getElementById('cabin-description').value.trim()
+    };
+
+    if (!body.name || !body.capacity || !body.description) {
+      toast('Completa todos los campos.', 'error'); return;
+    }
+
+    const isEdit = id > 0;
+    try {
+      const res = await fetch(`${API}/Cabin`, {
+        method: isEdit ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error();
+      toast(isEdit ? `Cabina #${id} actualizada.` : 'Cabina añadida correctamente.', 'success');
+      closeForm('cabins');
+      await loadCabins();
+    } catch {
+      toast('Error al guardar. Intenta de nuevo.', 'error');
+    }
+  }
+
+  // ============ EQUIPMENT ============
+  async function loadEquipment() {
+    try {
+      const res = await fetch(`${API}/Equipment`);
+      equipment = await res.json();
+      renderEquipment();
+    } catch { equipment = []; }
+  }
+
+  function renderEquipment() {
+    const tbody = document.getElementById('tbody-equipment');
+    document.getElementById('badge-equipment').textContent = equipment.length;
+    document.getElementById('count-equipment').textContent = `${equipment.length} registro${equipment.length !== 1 ? 's' : ''}`;
+
+    if (!equipment.length) {
+      tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">🎧</div><div class="empty-text">SIN EQUIPOS REGISTRADOS</div></div></td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = equipment.map(e => `
+      <tr>
+        <td class="td-id">#${e.id}</td>
+        <td><strong>${e.name}</strong></td>
+        <td><span class="badge badge-active">${e.type || '—'}</span></td>
+        <td style="color:var(--muted)">${e.description}</td>
+        <td class="td-actions">
+          <button class="btn-edit" onclick="editEquipment(${e.id})">EDITAR</button>
+          <button class="btn-delete" onclick="askDelete('equipment', ${e.id}, '${e.name.replace(/'/g, "\\'")}')">ELIMINAR</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function editEquipment(id) {
+    const e = equipment.find(x => x.id === id);
+    if (!e) return;
+    openForm('equipment');
+    document.getElementById('equip-id').value = e.id;
+    document.getElementById('equip-name').value = e.name;
+    document.getElementById('equip-type').value = e.type || '';
+    document.getElementById('equip-description').value = e.description;
+    document.getElementById('form-equipment-title').textContent = `// EDITANDO EQUIPO #${e.id}`;
+  }
+
+  async function saveEquipment() {
+    const id = parseInt(document.getElementById('equip-id').value) || 0;
+    const body = {
+      id,
+      name: document.getElementById('equip-name').value.trim(),
+      type: document.getElementById('equip-type').value.trim(),
+      description: document.getElementById('equip-description').value.trim()
+    };
+
+    if (!body.name || !body.type || !body.description) {
+      toast('Completa todos los campos.', 'error'); return;
+    }
+
+    const isEdit = id > 0;
+    try {
+      const res = await fetch(`${API}/Equipment`, {
+        method: isEdit ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error();
+      toast(isEdit ? `Equipo #${id} actualizado.` : 'Equipo añadido correctamente.', 'success');
+      closeForm('equipment');
+      await loadEquipment();
+    } catch {
+      toast('Error al guardar. Intenta de nuevo.', 'error');
+    }
+  }
+
+  // ============ RESERVATIONS ============
+  async function loadReservations() {
+    try {
+      const res = await fetch(`${API}/Reservation`);
+      reservations = await res.json();
+      renderReservations();
+    } catch { reservations = []; }
+  }
+
+  function renderReservations() {
+    const tbody = document.getElementById('tbody-reservations');
+    document.getElementById('badge-reservations').textContent = reservations.length;
+    document.getElementById('count-reservations').textContent = `${reservations.length} registro${reservations.length !== 1 ? 's' : ''}`;
+
+    if (!reservations.length) {
+      tbody.innerHTML = `<tr><td colspan="8"><div class="empty-state"><div class="empty-icon">📅</div><div class="empty-text">SIN RESERVAS REGISTRADAS</div></div></td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = reservations.map(r => {
+      const stateMap = { activada: 'badge-active', cancelada: 'badge-cancelled', finalizada: 'badge-finished' };
+      const badgeCls = stateMap[r.reservationState?.toLowerCase()] || 'badge-active';
+      const clientName = r.client?.name || clients.find(c => c.id === r.clientId)?.name || `#${r.clientId}`;
+      const cabinName = r.cabin?.name || cabins.find(c => c.id === r.cabinId)?.name || `#${r.cabinId}`;
+      const equipList = r.equipments?.length
+        ? `<div class="equip-chips">${r.equipments.map(e => `<span class="equip-chip">${e.name}</span>`).join('')}</div>`
+        : '<span style="color:var(--muted);font-size:11px;font-family:\'DM Mono\',monospace">—</span>';
+
+      return `
+        <tr>
+          <td class="td-id">#${r.id}</td>
+          <td><strong>${clientName}</strong></td>
+          <td>${cabinName}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px">${fmt(r.startDate)}</td>
+          <td style="font-family:'DM Mono',monospace;font-size:11px">${fmt(r.endDate)}</td>
+          <td><span class="badge ${badgeCls}">${r.reservationState || '—'}</span></td>
+          <td>${equipList}</td>
+          <td class="td-actions">
+            <button class="btn-edit" onclick="editReservation(${r.id})">EDITAR</button>
+            <button class="btn-delete" onclick="askDelete('reservations', ${r.id}, 'Reserva #${r.id}')">ELIMINAR</button>
+          </td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  function populateReservationSelects() {
+    const clientSel = document.getElementById('res-client');
+    const cabinSel = document.getElementById('res-cabin');
+    const equipList = document.getElementById('equip-checkbox-list');
+
+    clientSel.innerHTML = clients.map(c => `<option value="${c.id}">${c.name}</option>`).join('') || '<option>Sin clientes</option>';
+    cabinSel.innerHTML = cabins.map(c => `<option value="${c.id}">${c.name} (cap. ${c.capacity})</option>`).join('') || '<option>Sin cabinas</option>';
+    equipList.innerHTML = equipment.length
+      ? equipment.map(e => `
+          <label class="checkbox-item">
+            <input type="checkbox" value="${e.id}" name="equip-check"> ${e.name} <span style="color:var(--muted);font-size:10px">(${e.type})</span>
+          </label>`).join('')
+      : '<div style="color:var(--muted);font-size:12px;padding:8px;font-family:\'DM Mono\',monospace">Sin equipos disponibles</div>';
+  }
+
+  function editReservation(id) {
+    const r = reservations.find(x => x.id === id);
+    if (!r) return;
+    openForm('reservations');
+    document.getElementById('res-id').value = r.id;
+    document.getElementById('res-start').value = toLocalInput(r.startDate);
+    document.getElementById('res-end').value = toLocalInput(r.endDate);
+    document.getElementById('res-state').value = r.reservationState || 'activada';
+
+    // Set client and cabin selects
+    setTimeout(() => {
+      document.getElementById('res-client').value = r.clientId;
+      document.getElementById('res-cabin').value = r.cabinId;
+
+      // Check existing equipment
+      if (r.equipments?.length) {
+        const ids = r.equipments.map(e => e.id);
+        document.querySelectorAll('input[name="equip-check"]').forEach(cb => {
+          if (ids.includes(parseInt(cb.value))) cb.checked = true;
+        });
+      }
+    }, 50);
+
+    document.getElementById('form-reservations-title').textContent = `// EDITANDO RESERVA #${r.id}`;
+  }
+
+  async function saveReservation() {
+    const id = parseInt(document.getElementById('res-id').value) || 0;
+    const selectedEquipIds = [...document.querySelectorAll('input[name="equip-check"]:checked')]
+      .map(cb => parseInt(cb.value));
+
+    const body = {
+      id,
+      clientId: parseInt(document.getElementById('res-client').value),
+      cabinId: parseInt(document.getElementById('res-cabin').value),
+      startDate: document.getElementById('res-start').value,
+      endDate: document.getElementById('res-end').value,
+      reservationState: document.getElementById('res-state').value,
+      equipments: selectedEquipIds.map(eid => ({ id: eid }))
+    };
+
+    if (!body.clientId || !body.cabinId || !body.startDate || !body.endDate) {
+      toast('Completa todos los campos requeridos.', 'error'); return;
+    }
+
+    if (new Date(body.startDate) >= new Date(body.endDate)) {
+      toast('La fecha de inicio debe ser anterior a la fecha fin.', 'error'); return;
+    }
+
+    const isEdit = id > 0;
+    try {
+      const res = await fetch(`${API}/Reservation`, {
+        method: isEdit ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) throw new Error();
+      toast(isEdit ? `Reserva #${id} actualizada.` : 'Reserva creada correctamente.', 'success');
+      closeForm('reservations');
+      await loadReservations();
+    } catch {
+      toast('Error al guardar. Puede haber un conflicto de horario.', 'error');
+    }
+  }
+</script>
+</body>
+</html>
