@@ -8,11 +8,11 @@ namespace ThePodcastProject.Application.Dtos
     {
         public int Id { get; set; }
         public int ClientId { get; set; }
-        public ClientDto ? Client { get; set; } //? agregado
+        public ClientDto ? Client { get; set; } 
 
 
         public int CabinId { get; set; }
-        public CabinDto ? Cabin { get; set; } //? agregado
+        public CabinDto ? Cabin { get; set; } 
 
 
         public DateTime StartDate { get; set; }
