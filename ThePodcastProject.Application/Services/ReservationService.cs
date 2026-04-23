@@ -25,15 +25,6 @@ namespace ThePodcastProject.Application.Services
         public async Task<List<ReservationDto>> GetAllReservationsAsync()
         {
 
-            //var entities = await unitOfWork.Reservations.GetAllReservationsAsync();
-
-            //return entities.Select(r => new ReservationDto
-            //{
-            //    Id = r.Id,
-            //    StartDate = r.StartDate,
-            //    EndDate = r.EndDate,
-            //    CabinId = r.CabinId
-            //}).ToList();
 
             var entities = await unitOfWork.Reservations.GetAllReservationsAsync();
 
@@ -93,42 +84,7 @@ namespace ThePodcastProject.Application.Services
 
         public async Task AddReservationAsync(ReservationDto dto)
         {
-            //var entity = new Reservation
-            //{
-            //    //Id = dto.Id,
-            //    //StartDate = dto.StartDate,
-            //    //EndDate = dto.EndDate,
-            //    //CabinId = dto.CabinId
-
-            ////    ClientId = dto.ClientId,
-            ////    CabinId = dto.CabinId,
-            ////    StartDate = dto.StartDate,
-            ////    EndDate = dto.EndDate,
-            ////    ReservationState = dto.ReservationState,
-            ////    Equipments = dto.Equipments
-            ////.Select(e => new Equipment { Id = e.Id })
-            ////.ToList()
-
-
-            //};
-
-            //    var equipments = dto.Equipments
-            //.Select(e => new Equipment { Id = e.Id })
-            //.ToList();
-
-            //    // Attach para que EF no intente insertar equipos nuevos
-            //    foreach (var eq in equipments)
-            //        unitOfWork.Context.Attach(eq);
-
-            //    var entity = new Reservation
-            //    {
-            //        ClientId = dto.ClientId,
-            //        CabinId = dto.CabinId,
-            //        StartDate = dto.StartDate,
-            //        EndDate = dto.EndDate,
-            //        ReservationState = dto.ReservationState,
-            //        Equipments = equipments
-            //    };
+           
 
             var entity = new Reservation
             {
@@ -138,8 +94,7 @@ namespace ThePodcastProject.Application.Services
                 EndDate = dto.EndDate,
                 ReservationState = dto.ReservationState,
             };
-            //lo nuevo 
-
+        
             if (dto.Equipments != null && dto.Equipments.Any())
             {
                 var equipmentIds = dto.Equipments.Select(e => e.Id).ToList();
@@ -149,7 +104,6 @@ namespace ThePodcastProject.Application.Services
                     .ToList();
             }
 
-            //
             var result = await unitOfWork.Reservations.AddReservationAsync(entity);
 
             if (result != "Reserva creada correctamente")
@@ -157,17 +111,11 @@ namespace ThePodcastProject.Application.Services
 
             await unitOfWork.CompleteAsync();
 
-            //await unitOfWork.Reservations.AddReservationAsync(entity);
-            //await unitOfWork.CompleteAsync();
         }
 
         public async Task UpdateReservationAsync(ReservationDto dto)
         {
             var entity= await unitOfWork.Reservations.GetReservationByIdAsync(dto.Id);
-
-            //entity.StartDate = dto.StartDate;
-            //entity.EndDate = dto.EndDate;
-            //entity.CabinId = dto.CabinId;
 
             entity.ClientId = dto.ClientId;
             entity.CabinId = dto.CabinId;
