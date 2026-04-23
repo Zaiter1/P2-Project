@@ -1,59 +1,4 @@
-﻿//using Microsoft.EntityFrameworkCore;
-//using System;
-//using System.Collections.Generic;
-//using System.Text;
-//using ThePodcastProject.Persistence.DataContext;
-
-//namespace ThePodcastProject.Infraestructure.Repositories
-//{
-//    public class ClientRepository
-//    {
-//        private readonly ThePodcastProjectApplicationContext context;
-
-//        public ClientRepository(ThePodcastProjectApplicationContext context)
-//        {
-//            this.context = context;
-//        }
-
-//        public async Task<List<Domain.Entities.Client>> GetAllClientsAsync()
-//        {
-//            return await context.Clients
-//            .Include(c => c.Reservations)
-//                .ThenInclude(r => r.Cabin)
-//            .ToListAsync();
-//        }
-
-//        public async Task<Domain.Entities.Client> GetClientByIdAsync(int id)
-//        {
-//            return await context.Clients
-//            .Include(c => c.Reservations)
-//                .ThenInclude(r => r.Cabin)
-//            .FirstOrDefaultAsync(c => c.Id == id);
-//        }
-//        public async Task AddClientAsync(Domain.Entities.Client client)
-//        {
-//            context.Clients.Add(client);
-//
-//        }
-//        public async Task UpdateClientAsync(Domain.Entities.Client client)
-//        {
-//            context.Clients.Update(client);
-//
-//        }
-//        public async Task DeleteClientAsync(int id)
-//        {
-//            var client = await context.Clients.FindAsync(id);
-//            if (client != null)
-//            {
-//                context.Clients.Remove(client);
-//
-//            }
-
-
-//        }
-//    }
-//}
-
+﻿
 using Microsoft.EntityFrameworkCore;
 using ThePodcastProject.Domain.Entities;
 using ThePodcastProject.Persistence.DataContext;
@@ -69,7 +14,6 @@ namespace ThePodcastProject.Infraestructure.Repositories
             this.context = context;
         }
 
-        // 🔹 Obtener todas las reservas
         public async Task<List<Reservation>> GetAllReservationsAsync()
         {
             return await context.Reservations
@@ -79,7 +23,6 @@ namespace ThePodcastProject.Infraestructure.Repositories
                 .ToListAsync();
         }
 
-        // 🔹 Obtener por ID
         public async Task<Reservation> GetReservationByIdAsync(int id)
         {
             return await context.Reservations
@@ -89,7 +32,6 @@ namespace ThePodcastProject.Infraestructure.Repositories
                 .FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        // 🔥 🔴 VALIDACIÓN DE HORARIO (CLAVE DEL PROYECTO)
         public async Task<bool> HasConflictAsync(Reservation reservation)
         {
             return await context.Reservations.AnyAsync(r =>
@@ -100,10 +42,8 @@ namespace ThePodcastProject.Infraestructure.Repositories
             );
         }
 
-        // 🔹 Crear reserva
         public async Task<string> AddReservationAsync(Reservation reservation)
         {
-            // Validar conflicto
             var conflict = await HasConflictAsync(reservation);
 
             if (conflict)
@@ -115,7 +55,6 @@ namespace ThePodcastProject.Infraestructure.Repositories
             return "Reserva creada correctamente";
         }
 
-        // 🔹 Actualizar reserva
         public async Task<string> UpdateReservationAsync(Reservation reservation)
         {
             var conflict = await HasConflictAsync(reservation);
@@ -129,7 +68,6 @@ namespace ThePodcastProject.Infraestructure.Repositories
             return "Reserva actualizada";
         }
 
-        // 🔹 Eliminar
         public async Task DeleteReservationAsync(int id)
         {
             var reservation = await context.Reservations.FindAsync(id);
