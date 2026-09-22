@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThePodcastProject.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d566c6f243f8f1640cf92f4e49142684df2a85ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb5315805f308d524d6f6641b7c18c1386e0040a")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThePodcastProject.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThePodcastProject.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

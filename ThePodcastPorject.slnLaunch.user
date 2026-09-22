@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "ThePodcastProject.API\\ThePodcastProject.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ThePodcastProject.Frontend\\ThePodcastProject.Frontend.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

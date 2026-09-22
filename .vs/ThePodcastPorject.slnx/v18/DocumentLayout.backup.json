@@ -1,0 +1,542 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.infraestructure\\repositories\\_unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|solutionrelative:thepodcastproject.infraestructure\\repositories\\_unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.persistence\\datacontext\\thepodcastprojectapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|solutionrelative:thepodcastproject.persistence\\datacontext\\thepodcastprojectapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.infraestructure\\repositories\\cabinrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|solutionrelative:thepodcastproject.infraestructure\\repositories\\cabinrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.domain\\entities\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|solutionrelative:thepodcastproject.domain\\entities\\equipment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\dtos\\equipmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\dtos\\equipmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\dtos\\clientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\dtos\\clientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\dtos\\cabindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\dtos\\cabindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.domain\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|solutionrelative:thepodcastproject.domain\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.domain\\entities\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|solutionrelative:thepodcastproject.domain\\entities\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.domain\\entities\\cabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719A3091-5730-64DD-7CE4-8B6059FE288D}|ThePodcastProject.Domain\\ThePodcastProject.Domain.csproj|solutionrelative:thepodcastproject.domain\\entities\\cabin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.infraestructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|solutionrelative:thepodcastproject.infraestructure\\repositories\\reservationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\services\\equipmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\dtos\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\dtos\\reservationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\services\\cabinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\services\\cabinservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.infraestructure\\repositories\\equipmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|solutionrelative:thepodcastproject.infraestructure\\repositories\\equipmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.application\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A65EF58-45DF-002C-B946-20034EAEC5B9}|ThePodcastProject.Application\\ThePodcastProject.Application.csproj|solutionrelative:thepodcastproject.application\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\controllers\\cabincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\controllers\\cabincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.persistence\\migrations\\20260419223240_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|solutionrelative:thepodcastproject.persistence\\migrations\\20260419223240_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.persistence\\migrations\\thepodcastprojectapplicationcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{863045CE-C931-F04F-1099-4C8ACA2B7DEC}|ThePodcastProject.Persistence\\ThePodcastProject.Persistence.csproj|solutionrelative:thepodcastproject.persistence\\migrations\\thepodcastprojectapplicationcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.infraestructure\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6AAC47-C97E-6024-D851-BB9B9BA2FD32}|ThePodcastProject.Infraestructure\\ThePodcastProject.Infraestructure.csproj|solutionrelative:thepodcastproject.infraestructure\\repositories\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\controllers\\equipmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\controllers\\equipmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|c:\\users\\maz_b\\onedrive\\escritorio\\itla\\p2 tareas\\final project p2\\thepodcastporject\\thepodcastproject.api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9946A25A-BEC9-5B67-5D40-F525BCCE3521}|ThePodcastProject.API\\ThePodcastProject.API.csproj|solutionrelative:thepodcastproject.api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 13,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 36,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReservationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\ReservationRepository.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Infraestructure\\Repositories\\ReservationRepository.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\ReservationRepository.cs",
+              "RelativeToolTip": "ThePodcastProject.Infraestructure\\Repositories\\ReservationRepository.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T00:26:53.02Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Equipment.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Equipment.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Domain\\Entities\\Equipment.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Equipment.cs",
+              "RelativeToolTip": "ThePodcastProject.Domain\\Entities\\Equipment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T00:25:57.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientDto.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\ClientDto.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Dtos\\ClientDto.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\ClientDto.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Dtos\\ClientDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T17:42:48.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EquipmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\EquipmentDto.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Dtos\\EquipmentDto.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\EquipmentDto.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Dtos\\EquipmentDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T17:41:55.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CabinRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\CabinRepository.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Infraestructure\\Repositories\\CabinRepository.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\CabinRepository.cs",
+              "RelativeToolTip": "ThePodcastProject.Infraestructure\\Repositories\\CabinRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T23:54:30.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThePodcastProjectApplicationContext.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\DataContext\\ThePodcastProjectApplicationContext.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Persistence\\DataContext\\ThePodcastProjectApplicationContext.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\DataContext\\ThePodcastProjectApplicationContext.cs",
+              "RelativeToolTip": "ThePodcastProject.Persistence\\DataContext\\ThePodcastProjectApplicationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T23:01:30.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\_UnitOfWork.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Infraestructure\\Repositories\\_UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\_UnitOfWork.cs",
+              "RelativeToolTip": "ThePodcastProject.Infraestructure\\Repositories\\_UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T03:52:12.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CabinDto.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\CabinDto.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Dtos\\CabinDto.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\CabinDto.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Dtos\\CabinDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T17:40:25.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Reservation.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Domain\\Entities\\Reservation.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Reservation.cs",
+              "RelativeToolTip": "ThePodcastProject.Domain\\Entities\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T04:12:40.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Client.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Domain\\Entities\\Client.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Client.cs",
+              "RelativeToolTip": "ThePodcastProject.Domain\\Entities\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T04:12:37.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cabin.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Cabin.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Domain\\Entities\\Cabin.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Domain\\Entities\\Cabin.cs",
+              "RelativeToolTip": "ThePodcastProject.Domain\\Entities\\Cabin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T22:19:22.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReservationService.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\ReservationService.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Services\\ReservationService.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\ReservationService.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Services\\ReservationService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T21:44:35.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EquipmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\EquipmentRepository.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Infraestructure\\Repositories\\EquipmentRepository.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\EquipmentRepository.cs",
+              "RelativeToolTip": "ThePodcastProject.Infraestructure\\Repositories\\EquipmentRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAIA+wB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T00:04:58.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EquipmentService.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\EquipmentService.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Services\\EquipmentService.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\EquipmentService.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Services\\EquipmentService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAA5wFwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T16:46:42.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CabinService.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\CabinService.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Services\\CabinService.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\CabinService.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Services\\CabinService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T17:45:48.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\wwwroot\\index.html",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\wwwroot\\index.html",
+              "RelativeToolTip": "ThePodcastProject.API\\wwwroot\\index.html",
+              "ViewState": "AgIAADQFAAAAAAAAAAAAAGoFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-04-21T01:30:53.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ReservationDto.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\ReservationDto.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Dtos\\ReservationDto.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Dtos\\ReservationDto.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Dtos\\ReservationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T17:43:26.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Controllers\\ReservationController.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wCoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T23:38:52.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Application\\Services\\ClientService.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Application\\Services\\ClientService.cs",
+              "RelativeToolTip": "ThePodcastProject.Application\\Services\\ClientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T21:44:13.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\Controllers\\ClientController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T23:32:09.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CabinController.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\CabinController.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Controllers\\CabinController.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\CabinController.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\Controllers\\CabinController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T23:37:11.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Program.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Program.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Program.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC0AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T21:00:39.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\appsettings.json",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\appsettings.json",
+              "RelativeToolTip": "ThePodcastProject.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-19T21:33:01.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ThePodcastProject.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-21T01:47:35.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20260419223240_Init.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\Migrations\\20260419223240_Init.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Persistence\\Migrations\\20260419223240_Init.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\Migrations\\20260419223240_Init.cs",
+              "RelativeToolTip": "ThePodcastProject.Persistence\\Migrations\\20260419223240_Init.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAQwJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T22:32:40.384Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ThePodcastProjectApplicationContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\Migrations\\ThePodcastProjectApplicationContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Persistence\\Migrations\\ThePodcastProjectApplicationContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Persistence\\Migrations\\ThePodcastProjectApplicationContextModelSnapshot.cs",
+              "RelativeToolTip": "ThePodcastProject.Persistence\\Migrations\\ThePodcastProjectApplicationContextModelSnapshot.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAQwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-21T01:12:59.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.Infraestructure\\Repositories\\ClientRepository.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.Infraestructure\\Repositories\\ClientRepository.cs",
+              "RelativeToolTip": "ThePodcastProject.Infraestructure\\Repositories\\ClientRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T23:33:07.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "EquipmentController.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\EquipmentController.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\Controllers\\EquipmentController.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\Controllers\\EquipmentController.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\Controllers\\EquipmentController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T23:37:58.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\appsettings.Development.json",
+              "RelativeToolTip": "ThePodcastProject.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-19T22:41:47.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "ThePodcastProject.API\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\maz_b\\OneDrive\\Escritorio\\ITLA\\P2 Tareas\\Final Project P2\\ThePodcastPorject\\ThePodcastProject.API\\WeatherForecast.cs",
+              "RelativeToolTip": "ThePodcastProject.API\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-19T21:20:57.253Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

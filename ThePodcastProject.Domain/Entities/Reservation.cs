@@ -19,7 +19,7 @@ namespace ThePodcastProject.Domain.Entities
         public DateTime EndDate { get; set; }
 
 
-        public string ReservationState { get; set; } // activada,cancelada o finalizada
+        public string ReservationState { get; set; } 
 
         public ICollection<Equipment> Equipments { get; set; } = new List<Equipment>();
     }

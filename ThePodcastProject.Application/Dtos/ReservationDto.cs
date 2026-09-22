@@ -19,7 +19,7 @@ namespace ThePodcastProject.Application.Dtos
         public DateTime EndDate { get; set; }
 
 
-        public string ReservationState { get; set; } // activada,cancelada o finalizada
+        public string ReservationState { get; set; } 
 
         public ICollection<EquipmentDto> Equipments { get; set; } = new List<EquipmentDto>();
     }

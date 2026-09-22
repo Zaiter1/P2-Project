@@ -73,7 +73,7 @@ namespace ThePodcastProject.Application.Services
             var entity = new Equipment
             {
                Name= dto.Name,
-                Type = dto.Type,  // ← agregar esta línea
+                Type = dto.Type,  
 
                 Description = dto.Description,
                 

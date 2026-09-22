@@ -94,7 +94,6 @@ namespace ThePodcastProject.Application.Services
                 EndDate = dto.EndDate,
                 ReservationState = dto.ReservationState,
             };
-        
             if (dto.Equipments != null && dto.Equipments.Any())
             {
                 var equipmentIds = dto.Equipments.Select(e => e.Id).ToList();
