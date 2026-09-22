@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="ThePodcastProject.API/ThePodcastProject.API.csproj" />
-  <Project Path="ThePodcastProject.Application/ThePodcastProject.Application.csproj" />
-  <Project Path="ThePodcastProject.Domain/ThePodcastProject.Domain.csproj" />
-  <Project Path="ThePodcastProject.Infraestructure/ThePodcastProject.Infraestructure.csproj" />
-  <Project Path="ThePodcastProject.Persistence/ThePodcastProject.Persistence.csproj" />
-</Solution>
